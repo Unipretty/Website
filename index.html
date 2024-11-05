@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css"> <!-- Link to your CSS file in the 'css' folder -->
+    <title>Earncash</title>
+    <style>
+        /* Inline styles for basic layout */
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
+        .form-section, .dashboard { display: none; }
+        .active { display: block; }
+        header { display: flex; justify-content: space-between; align-items: center; }
+        .dropdown-menu { display: none; position: absolute; background-color: purple; border: 1px solid #ccc; }
+        .menu-icon:hover + .dropdown-menu { display: block; }
+        .menu-icon { cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Earncash</h1>
+
+        <!-- Registration Form -->
+        <div id="registration" class="form-section active">
+            <h2>Register</h2>
+            <form id="register-form">
+                <input type="text" placeholder="Username" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Register</button>
+            </form>
+            <p>Already have an account? <a href="javascript:void(0);" id="to-login">Login here</a></p>
+        </div>
+
+        <!-- Login Form -->
+        <div id="login" class="form-section">
+            <h2>Login</h2>
+            <form id="login-form">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account? <a href="javascript:void(0);" id="to-register">Register here</a></p>
+            <p><a href="javascript:void(0);" id="forgot-password-link">Forgot Password?</a></p>
+        </div>
+
+        <!-- Forgot Password Form -->
+        <div id="forgot-password" class="form-section">
+            <h2>Forgot Password</h2>
+            <form id="forgot-password-form">
+                <input type="email" placeholder="Email" required>
+                <button type="submit">Reset Password</button>
+            </form>
+            <p><a href="javascript:void(0);" id="back-to-login">Back to Login</a></p>
+        </div>
+
+        <!-- Main Dashboard (Hidden initially) -->
+        <div id="main" class="dashboard">
+            <header>
+                <div class="logo">Earncash</div>
+                <div class="user-menu">
+                    <div class="menu-icon" onclick="toggleMenu()">≡</div>
+                    <div class="dropdown-menu" id="dropdown-menu">
+                        <a href="javascript:void(0);" id="profile-link">Profile</a>
+                        <a href="javascript:void(0);" id="earnings-link">Earnings</a>
+                        <a href="javascript:void(0);" id="referral-link">Referral</a>
+                        <a href="javascript:void(0);" id="withdrawal-link">Withdrawal</a>
+                        <a href="javascript:void(0);" id="customer-care-link">Customer Care</a>
+                        <a href="javascript:void(0);" id="about-us-link">About Us</a>
+                        <a href="javascript:void(0);" id="settings-link">Settings</a>
+                        <a href="javascript:void(0);" id="logout-button">Logout</a>
+                    </div>
+                </div>
+            </header>
+            <main>
+                <h1>Welcome to your dashboard!</h1>
+                <div class="earnings">
+                    <h2>Your Earnings</h2>
+                    <p id="earnings-amount">$0.000</p>
+                </div>
+            </main>
+        </div>
+
+        <!-- Profile, Referral, Earnings, Withdrawal, etc. (Similar structure) -->
+
+    </div>
+
+    <script src="js/scripts.js"></script> <!-- Link to your JS file in the 'js' folder -->
+</body>
+</html>
